@@ -55,7 +55,7 @@ const WorkoutHistory = () => {
   };
 
   // Group by date
-  const grouped = workouts.reduce((acc: Record<string, any[]>, w) => {
+  const grouped: Record<string, any[]> = workouts.reduce((acc: Record<string, any[]>, w) => {
     const key = format(parseISO(w.date), "yyyy-MM-dd");
     (acc[key] = acc[key] || []).push(w);
     return acc;
